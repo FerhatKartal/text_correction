@@ -15,9 +15,7 @@ onayListesi=[]
 """
 ayıkla fonksiyonu cumleyi kelimelere ayırır
 """
-def ayikla(cumle):
-    dizi=cumle.split()
-    
+def ayikla(dizi):
     #kelimeleri sınıflandıran döngü
     for i in range(len(dizi)):
         sira=0

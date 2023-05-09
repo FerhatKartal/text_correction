@@ -1,13 +1,19 @@
+from sadelestir import sadelestir
 from ayikla import ayikla
 from kelimeler import sozluk
 
-#örnek cümle1="tavsan buharlas"(***tavsan buharlasamaz)
-#örnek cümle2="araba carp"(***araba carpabilir)
-#örnek cümle3="kaya ak"(***kaya akamaz)
-#örnek cümle4="hizli ucak kon"(***hızlı bir ucak konabilir)
-#örnek cümle5="dal hizli uza"(***dal hızlı uzayabilir)
-#örnek cümle6="ate sert eri"(***ates sert değildir ve erimez)
-cumle="ates sert eri"
+#örnek cümle1="tavsanlar buharlasabilirler"
+#örnek cümle2="arabamiz carpmaz"
+#örnek cümle3="kayalar akıyordu"
+#örnek cümle4="hizli ucaklar konacaklardi"
+#örnek cümle5="dallar hizlica uzayacaktir"
+#örnek cümle6="ates serttir eriyebilir"
+cumle="ates serttir eriyebilir"
+
+"""
+cümlenin kelimelerini ,sözlukte karsılığı olan,en yalın hallerine cevirir
+"""
+cumle=sadelestir(cumle)
 
 
 """cumleyi ayikla fonksiyonuna gönderir ve sonucu yazdırır.
