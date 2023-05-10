@@ -42,19 +42,19 @@ sozluk=[
     ["hircin", "sifat",  1,0,       0],
 
 
-    ["gir",     "fiil",  3,0,  0],
-    ["düs",     "fiil",  3,0,  0],
-    ["ak",      "fiil",  4,0,  0],
-    ["uza",     "fiil",  3,0,  0],
-    ["kir",     "fiil",  3,0,  0],
-    ["kes",     "fiil",  3,0,  0],
-    ["yirt",    "fiil",  3,0,  0],
-    ["eri",     "fiil",  3,0,  0],
-    ["buharlas","fiil",  4,0,  0],
-    ["carp",    "fiil",  3,0,  0],
-    ["kon",     "fiil",  3,0,  0],
-    ["kap",     "fiil",  3,0,  0],
-    ["bat",     "fiil",  3,0,  0],
+    ["gir",     "fiil",  3,0,       0],
+    ["düs",     "fiil",  3,0,       0],
+    ["ak",      "fiil",  4,0,       0],
+    ["uza",     "fiil",  3,0,       0],
+    ["kir",     "fiil",  3,0,       0],
+    ["kes",     "fiil",  3,0,       0],
+    ["yirt",    "fiil",  3,0,       0],
+    ["eri",     "fiil",  3,0,       0],
+    ["buharlas","fiil",  4,0,       0],
+    ["carp",    "fiil",  3,0,       0],
+    ["kon",     "fiil",  3,0,       0],
+    ["kap",     "fiil",  3,0,       0],
+    ["bat",     "fiil",  3,0,       0],
     
 
 

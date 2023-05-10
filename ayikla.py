@@ -1,6 +1,5 @@
 from analiz import ozne_yuklem_analiz
 from analiz import sifat_nesne_analiz
-from analiz import nesne_yuklem_analiz
 from kelimeler import sozluk
 
 #nesneleri,sıfatları ve fiilleri tutan listeler
@@ -46,17 +45,14 @@ def ayikla(dizi):
         onayListesi.append(onay2)
         
 
-    #listeler boş değilse fiil ve nesne uyumluluğunu kontrol eden metoda gönderilir
-    if(len(nesneListesi)>0 and len(fiilListesi)>0):
-        onay3=nesne_yuklem_analiz(nesneListesi,fiilListesi)
-        onayListesi.append(onay3)
+    
 
     #sonuclar kontrol edilir.3 onaydan da olumlu sonuc alınırsa True,alınmazsa False doner.
     sonuc=1 
     for i in onayListesi:
         sonuc=i*1
         if(sonuc==0):
-            return("cumlede mantik hatasi var")
+            return -1
         else:
-            return("cumle dogru")
+            return 1
         

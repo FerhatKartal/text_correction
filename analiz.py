@@ -1,3 +1,5 @@
+from kelimeler import sozluk
+
 
 #ozne ve yuklemin uyumluluğunu kontrol eder
 def ozne_yuklem_analiz(ozne,fiil):
@@ -5,7 +7,7 @@ def ozne_yuklem_analiz(ozne,fiil):
     if ozne[0][hedef][0]==1:
         return 1
     else:
-        return 0
+        return -1
 
 #sıfat ve nesnenin uyumluluğunu kontrol eder
 def sifat_nesne_analiz(sifat_listesi,nesne_listesi):
@@ -16,11 +18,5 @@ def sifat_nesne_analiz(sifat_listesi,nesne_listesi):
                 if (nesne_listesi[j][hedef][0]==1):
                     return 1
                 else:
-                    return 0
+                    return -1
 
-"""
-bu fonksiyon henüz tamamlanmadı,simdilik True dönüyor
-nesne ve ara fiil uyumunu kontrol eder
-"""
-def nesne_yuklem_analiz(nesneListesi,fiilListesi):
-    return 1
