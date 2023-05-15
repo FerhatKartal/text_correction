@@ -22,6 +22,6 @@ Cümle önce **duzelten.py** ye gönderilir.Burada cümlede eksik yada yanlış 
 
 **ayıkla.py**,girdi olarak verilen cümleyi öğelerine ayırır.
 
-**on_analiz.py**,nesnelerin birbirleriyle uyumunu kontrol eder.Zincirleme nesneler varsa bunları tek bir nesneye indirger.
+**on_analiz.py**,nesnelerin birbirleriyle uyumunu kontrol eder.Birbirlerine bağlı nesneler varsa bunları tek bir nesneye indirger.
 
-**analiz.py**,özne-yüklemin ve sıfat-nesne uyumunu kontrol eder.
+**analiz.py**,özne-yüklem ve sıfat-nesne uyumunu kontrol eder.
