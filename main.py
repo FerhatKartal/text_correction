@@ -12,12 +12,13 @@ from duzelten import duzelten
 #örnek cümle6="ates serttir eriyebilir"
 #cumle="ucaklar konamaz"
 
+#kullanıcıdan cümle alır
 cumle=input("bir cumle giriniz:")
-cumle=cumle.lower()
+cumle=cumle.lower()#girilen cümledeki tüm harfleri küçük harfe dönüştürür
 print(cumle)
 
 
-#yanlış yazılan kelimeleri düzeltir
+#yanlış yazılan kelimeleri düzeltir,en yakın kelime listesini gösterir.
 duzeltilenCumle=duzelten(cumle)
 print("su kelimeleri de deneyebilirsiniz: "+duzeltilenCumle)
 

@@ -3,6 +3,8 @@
 kelimeler nesne,sifat ve fiil olarak 3 kategoride tutulur.
 nesneler 10,sifatlar ve fiiller 3 boyutta temsil edilir,
 bu boyutlar vasıtasıyla cümledeki uyumlulukları kontrol edilir.
+kelimede varolan durumlar [1,0,0] ile varolmayan durumlar [0,0,0] ile gösterilir.
+fiillerde ve sifatlarda hedef matris boyutu, karşılaştırılan kelimenin işleme alınacak boyutunu işaret eder.
 """
 sozluk=[
      #isim,     sinif,   canli,    hareket,   kati,  sivi,    gaz,     en,      boy,   yuksek,   agirlik,    sira
