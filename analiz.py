@@ -11,6 +11,7 @@ def ozne_yuklem_analiz(ozne,fiil):
 
 #sıfat ve nesnenin uyumluluğunu kontrol eder
 def sifat_nesne_analiz(sifat_listesi,nesne_listesi):
+    
     for i in range(len(sifat_listesi)):
         for j in range(len(nesne_listesi)):
             if (sifat_listesi[i][-1]==nesne_listesi[j][-1][0]):

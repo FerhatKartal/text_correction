@@ -38,11 +38,13 @@ def ayikla(dizi):
         onay1=ozne_yuklem_analiz(nesneListesi,fiilListesi)
         onayListesi.append(onay1)
         
+        
 
     #listeler boş değilse sıfat ve nesne uyumluluğunu kontrol eden metoda gönderilir
     if(len(sifatListesi)>0 and len(nesneListesi)>0):
         onay2=sifat_nesne_analiz(sifatListesi,nesneListesi)
         onayListesi.append(onay2)
+        
         
 
     
@@ -51,7 +53,7 @@ def ayikla(dizi):
     sonuc=1 
     for i in onayListesi:
         sonuc=i*1
-        if(sonuc==0):
+        if(sonuc==-1):
             return -1
         else:
             return 1
