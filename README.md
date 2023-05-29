@@ -29,3 +29,11 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 **on_analiz.py**,nesnelerin birbirleriyle uyumunu kontrol eder.Birbirlerine bağlı nesneler varsa bunları tek bir nesneye indirger.
 
 **analiz.py**,özne-yüklem ve sıfat-nesne uyumunu kontrol eder.
+
+***PROGRAMIN ÇALIŞTIRILMASI***
+* **main metot**ta iken "run" butonua tıklanarak ana fonksiyon çalıştırılır.
+* Komut satırındaki talimat doğrultusunda bir cümle girilir ve "enter" a basılır.
+* Program cümlenin analizini yaparak yanlış yada eksik yazılan kelimeler varsa doğrularını önerir,kelimeler doğru girilmişse cümlenin mantıklı olup olmadığı sonucunu döner.
+* Analiz sonrası devam edilmek istenip istenmediği komutu çalışır.
+* "E" veya "e" harfi girilirse program yeni bir cümle girişi ister.
+* "H" veya "h" girilirse program sonlanır.
