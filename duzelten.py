@@ -1,16 +1,19 @@
 from kelimeler import sozluk
 
-
 duzelenCumle=[]#düzeltilen kelimelerin listesini içerir.
 duzelenler=[]
+
 
 """
 eksik yada yanlış yazılan kelimeyi tespit ederek sözlükteki en yakın kelimelerin listesini döner.
 """
 def duzelten(cumle): 
+
+    
+  
     donenCumle=""
     cumle=cumle.split()
-   
+    
     for i in range(len(cumle)):
         
         
@@ -29,7 +32,7 @@ def duzelten(cumle):
 
 def istatistik(kelime):#eksik yada yanlış kelimeye en yakın olan kelimeleri bulur.
     sayac=[]
-    
+
     count=0
     
     
@@ -48,7 +51,7 @@ def istatistik(kelime):#eksik yada yanlış kelimeye en yakın olan kelimeleri b
                 
         count=(count/min(len(sozluk[j][0]),len(sayac)))*100#benzerlik oranı için yüzdelik durumu belirler.
         
-        if (count>40):#harflerin frekans benzerliğine göre %30 oranında benzer olanları seçer. 
+        if (count>40 and len(sozluk[j][0])>=len(kelime)):#harflerin frekans benzerliğine göre %40 oranında benzer olanları seçer. 
             if (count<100):
                 
                 duzelenler.append(sozluk[j][0])

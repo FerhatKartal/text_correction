@@ -16,7 +16,7 @@ def olumlumu(cumle):
 #sonucları test ederek main fonksiyona doner
 def dogruluk_kontrolu(sonuc1,sonuc2,sonuc3):
     
-    sonuc=sonuc1*sonuc3
+    sonuc=sonuc1+sonuc3
     if sonuc2==True:
         if sonuc>0:
             sonuc="cumle kurallara uygun"

@@ -3,15 +3,11 @@ from ayikla import ayikla
 from kelimeler import sozluk
 from olumlumu import olumlumu,dogruluk_kontrolu
 from on_analiz import nesne_nesne_analiz
-from duzelten import duzelten
+
 
 def deneme(cumle):
     cumle=cumle.lower()#girilen cümledeki tüm harfleri küçük harfe dönüştürür
-
-        #yanlış yazılan kelimeleri düzeltir,en yakın kelime listesini gösterir.
-    duzeltilenCumle=duzelten(cumle)
-
-
+    
     try:
         #cümlenin nesnelerini analiz eder
         sonuc1=nesne_nesne_analiz(cumle)
@@ -26,14 +22,10 @@ def deneme(cumle):
         sonuc3=ayikla(cumle)
 
         #cümlenin kurallara uygun olup olmadığını yazdırır
-        print(dogruluk_kontrolu(sonuc1,sonuc2,sonuc3))
+        kontrol=dogruluk_kontrolu(sonuc1,sonuc2,sonuc3)
+        print(kontrol)
             
     except:
             
-        print("sozlukte bulunmayan kelimeler mevcut")
-
-        duzeltilenCumle=duzeltilenCumle.split("]")
-            
-        for i in range(len(duzeltilenCumle)):
-            print(duzeltilenCumle[i])
+        print("bir hata var")
             
