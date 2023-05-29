@@ -12,7 +12,7 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 
 **main metot** ile programa bir cümle girdisi verilir.
 
-**main metot**'a girilen cümle önce **deneme.py** ye gönderilir.Bu metot cümle mantıklı olup olmadığı sonucunu döner.Cümlede eksik yada yanlış kelime varsa harf istatistiklerine göre en yakın olan kelimelerin listesi döner.
+**main metot**'a girilen cümle önce **deneme.py** ye gönderilir.Bu metot cümlenin mantıklı olup olmadığı sonucunu döner.Cümlede eksik yada yanlış kelime varsa harf istatistiklerine göre en yakın olan kelimelerin listesi döner.
 
 **kelimeler.py**,programın sözlüğüdür.Bu sözlükte kelimelerin matrislerle tutulan halleri bulunur.
 
