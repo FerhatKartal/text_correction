@@ -1,7 +1,7 @@
 from kelimeler import sozluk
 
 duzelenCumle=[]#düzeltilen kelimelerin listesini içerir.
-duzelenler=[]
+duzelenler=[]#duzeltilen cumleleri tutar.
 
 
 """

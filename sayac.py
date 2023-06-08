@@ -1,5 +1,7 @@
 from kelimeler import sozluk
-
+"""
+sözlükte olmayan kelimeleri tespit ederek,sayac ile sayılarını tutar.
+"""
 def sayac(cumle):
     cumle=cumle.split()
     sayac=0
