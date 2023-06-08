@@ -20,7 +20,7 @@ def duzelten(cumle):
         sayac=0
         for j in range(len(sozluk)):
             boyut=min(len(cumle[i]),len(sozluk[j][0]))
-            if cumle[i][:boyut]==sozluk[j][0][:boyut]:
+            if cumle[i][:boyut]==sozluk[j][0]:
                 duzelenCumle.append(cumle[i])
                 sayac+=1
         

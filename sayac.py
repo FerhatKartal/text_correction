@@ -5,8 +5,8 @@ def sayac(cumle):
     sayac=0
     for i in range(len(cumle)):
         for j in range(len(sozluk)):
-            boyut=min(len(cumle[i]),len(sozluk[j][0]))
-            if cumle[i][:boyut]==sozluk[j][0][:boyut]:
+            boyut=len(sozluk[j][0])
+            if cumle[i][:boyut]==sozluk[j][0]:
                 sayac+=1
     sayac=len(cumle)-sayac
     return sayac
