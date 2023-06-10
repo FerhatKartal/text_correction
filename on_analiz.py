@@ -12,7 +12,7 @@ def nesne_nesne_analiz(cumle):
     liste1=[]
     liste2=[]
     
-    cumle=cumle.split()
+    
 
     for i in range(len(cumle)):
         
@@ -32,7 +32,8 @@ def nesne_nesne_analiz(cumle):
                 elif(cumle[i][:boyut]==sozluk[j][0] and sozluk[j][1]=="fiil"):
                     liste2.append(sozluk[j][1:])
             
-    if(len(liste1)>=1 and len(liste2)>=1):               
+    if(len(liste1)>1 and len(liste2)>1): 
+                   
         return ozne_yuklem_analiz(liste1,liste2)
         
     else:

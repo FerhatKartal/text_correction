@@ -15,6 +15,7 @@ onayListesi=[]
 ayıkla fonksiyonu cumleyi kelimelere ayırır
 """
 def ayikla(dizi):
+    
     #kelimeleri sınıflandıran döngü
     for i in range(len(dizi)):
         sira=0
@@ -34,27 +35,26 @@ def ayikla(dizi):
                     fiilListesi.append(sozluk[j][1:])
 
     #listeler boş değilse ozne ve yuklem uyumluluğunu kontrol eden metoda gönderilir              
+    
     if(len(nesneListesi)>0 and len(fiilListesi)>0):
         onay1=ozne_yuklem_analiz(nesneListesi,fiilListesi)
         onayListesi.append(onay1)
-        
-        
+    else:
+        onay1=1  
+        onayListesi.append(onay1)
 
     #listeler boş değilse sıfat ve nesne uyumluluğunu kontrol eden metoda gönderilir
     if(len(sifatListesi)>0 and len(nesneListesi)>0):
         onay2=sifat_nesne_analiz(sifatListesi,nesneListesi)
         onayListesi.append(onay2)
         
+    else:
+        onay2=1
+        onayListesi.append(onay2)
         
-
-    
-
-    #sonuclar kontrol edilir.3 onaydan da olumlu sonuc alınırsa True,alınmazsa False doner.
-    sonuc=1 
-    for i in onayListesi:
-        sonuc=i*1
-        if(sonuc==-1):
-            return -1
-        else:
-            return 1
+    #sonuclar kontrol edilir.3 onaydan da olumlu sonuc alınırsa True,alınmazsa False doner.   
+    if(onayListesi[0]==1 and onayListesi[1]==1):
+        return 1
+    else:
+        return -1
         

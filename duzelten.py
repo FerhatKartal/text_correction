@@ -16,14 +16,20 @@ def duzelten(cumle):
     
     for i in range(len(cumle)):
         
-        
+        tek=0
         sayac=0
         for j in range(len(sozluk)):
-            boyut=min(len(cumle[i]),len(sozluk[j][0]))
-            if cumle[i][:boyut]==sozluk[j][0]:
-                duzelenCumle.append(cumle[i])
-                sayac+=1
-        
+            
+            if(tek==0):
+                for k in range(len(cumle[i])):
+                    if(k==0 and cumle[i]==sozluk[j][0]):
+                        duzelenCumle.append(cumle[i])
+                        tek=1
+                        sayac=sayac+1    
+                    elif cumle[i][:-k]==sozluk[j][0]:
+                        duzelenCumle.append(cumle[i])
+                        tek=1
+                        sayac=sayac+1
         if sayac==0:
             istatistik(cumle[i])
     for m in range(len(duzelenCumle)):
@@ -57,7 +63,7 @@ def istatistik(kelime):#eksik yada yanlış kelimeye en yakın olan kelimeleri b
                 duzelenler.append(sozluk[j][0])
         count=0
     duzelenCumle.append("]")    
-    duzelenCumle.append("*")
+    duzelenCumle.append("!!!*")
     duzelenCumle.append(kelime)
     duzelenCumle.append("için onerilenler;")
     for i in range(len(duzelenler)):
