@@ -10,9 +10,9 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 
 ***PROGRAMDAKİ METOTLAR***
 
-**main metot** ile programa bir cümle girdisi verilir.
+**main metot** ile Tkinter arayüzü çalışır ve programa bir cümle girdisi verilir.
 
-**main metot**'a girilen cümle önce **deneme.py** ye gönderilir.Bu metot cümlenin mantıklı olup olmadığı sonucunu döner.Cümlede eksik yada yanlış kelime varsa harf istatistiklerine göre en yakın olan kelimelerin listesi döner.
+**Tkinterdan** girilen cümle "main" aracılığıyla önce **deneme.py** ye gönderilir.Bu metot cümlenin mantıklı olup olmadığı sonucunu döner.Cümlede eksik yada yanlış kelime varsa harf istatistiklerine göre en yakın olan kelimelerin listesi döner.
 
 **düzelten**,girdide bulunan hatalı kelimeleri tespit eder.
 
@@ -37,6 +37,7 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 **tekil2**,aynı kökten türeyen kelimelerin birbirine karışmasını engeller ve dizi şeklinde sonuç döndürür.
 
 ***PROGRAMIN ÇALIŞTIRILMASI***
+
 **"main"** den "run" butonu ile program çalıştırılır.
 * Ekranda beliren "Tkinter" arayüzündeki text alanına cumle girilir.
 * "Kontrol Et" butonuna basılarak çalıştırılır.
