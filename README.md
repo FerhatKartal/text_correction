@@ -14,6 +14,8 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 
 **main metot**'a girilen cümle önce **deneme.py** ye gönderilir.Bu metot cümlenin mantıklı olup olmadığı sonucunu döner.Cümlede eksik yada yanlış kelime varsa harf istatistiklerine göre en yakın olan kelimelerin listesi döner.
 
+**düzelten**,girdide bulunan hatalı kelimeleri tespit eder.
+
 **kelimeler.py**,programın sözlüğüdür.Bu sözlükte kelimelerin matrislerle tutulan halleri bulunur.
 
 **sayac.py**,sözlükte bulunmayan kelimelerin sayısını belirler.
@@ -30,8 +32,13 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 
 **analiz.py**,özne-yüklem ve sıfat-nesne uyumunu kontrol eder.
 
+**tekil**,aynı kökten türeyen kelimelerin birbirine karışmasını engeller ve string sonuç döndürür.
+
+**tekil2**,aynı kökten türeyen kelimelerin birbirine karışmasını engeller ve dizi şeklinde sonuç döndürür.
+
 ***PROGRAMIN ÇALIŞTIRILMASI***
-* **main metot**ta iken "run" butonua tıklanarak ana fonksiyon çalıştırılır.
-* Komut satırındaki talimat doğrultusunda bir cümle girilir ve "enter" a basılır.
+**"main"** den "run" butonu ile program çalıştırılır.
+* Ekranda beliren "Tkinter" arayüzündeki text alanına cumle girilir.
+* "Kontrol Et" butonuna basılarak çalıştırılır.
 * Program cümlenin analizini yaparak yanlış yada eksik yazılan kelimeler varsa doğrularını önerir,kelimeler doğru girilmişse cümlenin mantıklı olup olmadığı sonucunu döner.
 
