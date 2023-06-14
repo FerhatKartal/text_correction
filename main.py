@@ -43,14 +43,9 @@ def degistir():
         etiket.config(text=str)
 
 
-
-
-
-        
-
 pencere=tk.Tk()
 pencere.geometry('800x400+50+50')
-pencere.title("METİN DENETLEYİCİ")
+pencere.title("TEXT CORRECTION")
 pencere.resizable(False,False)
 
 giris=tk.Entry(width=100)

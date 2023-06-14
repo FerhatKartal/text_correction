@@ -63,7 +63,7 @@ def istatistik(kelime):#eksik yada yanlış kelimeye en yakın olan kelimeleri b
                 duzelenler.append(sozluk[j][0])
         count=0
     duzelenCumle.append("]")    
-    duzelenCumle.append("!!!*")
+    duzelenCumle.append("!hatalı kelime!***")
     duzelenCumle.append(kelime)
     duzelenCumle.append("için onerilenler;")
     for i in range(len(duzelenler)):
