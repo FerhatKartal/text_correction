@@ -2,20 +2,21 @@ from analiz import ozne_yuklem_analiz
 from analiz import sifat_nesne_analiz
 from kelimeler import sozluk
 
-#nesneleri,sıfatları ve fiilleri tutan listeler
-nesneListesi=[]
-sifatListesi=[]
-fiilListesi=[]
-
-#son fonksiyondan dönene değerleri tutan liste
-onayListesi=[]
 
 
 """
 ayıkla fonksiyonu cumleyi kelimelere ayırır
 """
 def ayikla(dizi):
-    
+
+    #nesneleri,sıfatları ve fiilleri tutan listeler
+    nesneListesi=[]
+    sifatListesi=[]
+    fiilListesi=[]
+
+    #son fonksiyondan dönene değerleri tutan liste
+    onayListesi=[]
+
     #kelimeleri sınıflandıran döngü
     for i in range(len(dizi)):
         sira=0

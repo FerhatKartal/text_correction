@@ -5,21 +5,22 @@ from sayac import sayac
 from duzelten import duzelten
 
 
+def temizle():
+    etiket.config(text="")
+    giris.delete(0,tk.END)
+    yazi.config(text="kontrol et")
 
-veri=""
-gorsel=""
 def degistir():
     yazi.config(text="kontrol edildi")
     veri=giris.get()
-    giris.delete(0,tk.END)
-        
-        
+                
+                
     duzeltilenCumle=[]
 
     #kullanıcıdan cümle alır
     cumle=veri
     cumle=cumle.lower()#tüm harfleri küçük harf yapar.
-            
+                    
     cumle =re.sub(r'[^\w\s]',' ', cumle)#cümledeki noktalama işaretlerini ayıklar.
 
 
@@ -30,7 +31,7 @@ def degistir():
         etiket.config(text=gorsel)
     else:
         duzeltilenCumle=duzelten(cumle)
-            
+        
         duzeltilenCumle=duzeltilenCumle.split("]")
 
         duzeltilenCumle=list(set(duzeltilenCumle))#dönen sonuçların tekrar etmemesi için veriler set'e çevrilir.
@@ -38,10 +39,10 @@ def degistir():
         str+="sozlukte bulunmayan kelimeler mevcut:"
         str+="\n"
         for i in range(len(duzeltilenCumle)):
-            str+=duzeltilenCumle[i]
-            str+="\n"
-        etiket.config(text=str)
-
+            if(duzeltilenCumle[i].__contains__("!")):
+                str+=duzeltilenCumle[i]
+                str+="\n"
+            etiket.config(text=str)
 
 pencere=tk.Tk()
 pencere.geometry('800x400+50+50')
@@ -60,5 +61,7 @@ dugme1.pack()
 etiket=tk.Label(text="sonuç")
 etiket.pack()
 
-pencere.mainloop()
+dugme2=tk.Button(pencere,text='temizle',command=temizle)
+dugme2.pack()
 
+pencere.mainloop()

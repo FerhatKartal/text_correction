@@ -1,8 +1,7 @@
 from kelimeler import sozluk
-from tekil2 import tekil2
 
-yeni_cumle=[]#yalınlastırılan cumleyi tutar
 def sadelestir(cumle):#gelen cumleyi sozlukteki kelimelere indirger
+    yeni_cumle=[]#yalınlastırılan cumleyi tutar
     for i in range(len(cumle)):
         for j in range(len(sozluk)):
             boyut=min(len(sozluk[j][0]),len(cumle[i]))#sozlukteki kelimenin boyutunu tutar
