@@ -43,3 +43,6 @@ Sonuçta cümlenin mantıklı olup olmadığı bilgisini döner.
 * "Kontrol Et" butonuna basılarak çalıştırılır.
 * Program cümlenin analizini yaparak yanlış yada eksik yazılan kelimeler varsa doğrularını önerir,kelimeler doğru girilmişse cümlenin mantıklı olup olmadığı sonucunu döner.
 
+***PROGRAMIN TEST EDİLMESİ***
+Test dosyasında, programa farklı özelliklerde 50 adet girdi verilerek program test edilmiştir.
+
