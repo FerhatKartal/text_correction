@@ -1,6 +1,8 @@
 ***PROGRAMIN İŞLEVİ***
 
-Programda NLP kütüphanesi kullanılarak,veri analizi yapılmaktadır.Veriler cümlelere ve kelimelere ayrılarak ,öğeler tespit edilecek,kelimelerin birbirleriyle mantıksal bağlamları kurulacak ve program girdi olarak verilen cümlelerin mantıksal yönünü denetleyecektir.
+Program, Türkçe metin düzenleme için bir yapay zeka ve makine öğrenmesi projesidir. NLP kütüphanesi kullanılarak,veri analizi yapılmaktadır.Veriler cümlelere ve kelimelere ayrılarak ,öğeler tespit edilecek,kelimelerin birbirleriyle mantıksal bağlamları kurulacak ve program girdi olarak verilen cümlelerin mantıksal yönünü denetleyecektir.
+
+Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri devam edecektir.
 
 ***PROGRAMDAKİ METOTLAR***
 
