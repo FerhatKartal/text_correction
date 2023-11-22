@@ -6,6 +6,8 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 ***PROGRAMDAKİ METOTLAR***
 
+**main.py:** Programı yöneten ana metottur.
+
 **text.py:** Veri setini tutar.
 
 **pos_tag:** Bu fonksiyon sayesinde, cümlemizdeki özel isimleri, sıfatları vb. bulabiliriz.
