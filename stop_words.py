@@ -1,5 +1,10 @@
 #metinde herhangi bir önemi olmayan kelimeleri çıkarma
 
 from nltk.corpus import stopwords
-etkisiz_kelimeler = list(stopwords.words('turkish'))
-print(etkisiz_kelimeler)
+stop_words = list(stopwords.words('turkish'))
+
+def stopWords(word):
+    if(stop_words.__contains__(word)):
+        return False
+    else:
+        return True
