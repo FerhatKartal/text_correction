@@ -8,6 +8,12 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 **main.py:** Programı yöneten ana metottur.
 
+**createList.py:** Veri setini etiketleyen metottur.
+
+**database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
+
+**data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
+
 **text.py:** Veri setini tutar.
 
 **pos_tag:** Bu fonksiyon sayesinde, cümlemizdeki özel isimleri, sıfatları vb. bulabiliriz.
@@ -37,3 +43,5 @@ Programı VsCode ile çalıştırmak için:
 6)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
 
 örneğin; "python wordnet.py"
+
+
