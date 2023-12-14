@@ -4,7 +4,6 @@ from stop_words import stopWords
 
 # main'den gelen düz metni etiketler.
 def createList(text):
-
     #metin cümlelere ayrıldıktan sonra ,cümle içindeki ogeler tespit edilir
     #art arda gelen aynı ogeler tek bir blok oge olarak ele alınır
     liste=[]    #metnin cümlelerinin ogelere ayrılmış olan durumunu tutar
@@ -34,5 +33,7 @@ def createList(text):
                     insublist=[word]
                     count+=1
         sublist.append(insublist)
+        if(len(sublist)>2 and sublist[0]==sublist[1]):
+            sublist.remove(sublist[0])
         liste.append(sublist)#ögeleri belirlenerek,gruplandırılan cümle metne aktarılır
     return liste#etiketlenen metin main'e döndürülür.

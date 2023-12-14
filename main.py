@@ -1,14 +1,18 @@
-from text import text
+from text import fetchdata
 from database import createDatabase,saveDatabase
 from createList import createList
 
 
 
-createDatabase() #boş bir database tablosu olusturur
+#Aşağıda yorum satırına alınmış olan ilk 4 satır kaynaktan çekilen verilerin etiketlenerek database kayıt edilmesi amacıyla yazılmıştır.Bir kere çalıştırıldığı için program her çalıştığında tekrar çalıştırılmasına gerek yoktur.
 
-liste=createList(text) #metini cümlelere ve kelimelere böler,kelimeleri ögelerine göre etiketler.
+# createDatabase() #boş bir database tablosu olusturur
 
-saveDatabase(liste) #etiketlenen metni database kaydeder.
+# text=fetchdata()
+
+# liste=createList(text) #metini cümlelere ve kelimelere böler,kelimeleri ögelerine göre etiketler.
+
+# saveDatabase(liste) #etiketlenen metni database kaydeder.
 
             
       

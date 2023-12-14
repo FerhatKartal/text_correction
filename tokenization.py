@@ -2,7 +2,7 @@
 
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
-from text import text
+
 
 def sentTokenize(text):
     return sent_tokenize(text)
