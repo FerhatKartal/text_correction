@@ -49,6 +49,8 @@ Programı VsCode ile çalıştırmak için:
 örneğin; "python wordnet.py"
 
 ***PROGRAM ARAYÜZÜ***
-**kontrol_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar..
+**kontrol_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
+
 **tahmin_et butonu:** Girilen cümleye en yakın kalıp cümleleri döner.
+
 **temizle butonu:** Arayüzü temizler.
