@@ -26,6 +26,10 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 **wordnet:** İki kelimenin birbirine olan benzerlik oranını hesaplar.
 
+**sentControl:** Arayüzden girilen cümleyi cümleyi database ile taratarak benzer cümle kalıplarını döner.
+
+**wordControl:** Arayüzden girilen kelimeleri database taraması yaparak bir sonraki kelimeyi ve öge kalıplarını tahmin eder.
+
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
 Programı VsCode ile çalıştırmak için:
@@ -44,4 +48,7 @@ Programı VsCode ile çalıştırmak için:
 
 örneğin; "python wordnet.py"
 
-
+***PROGRAM ARAYÜZÜ***
+**kontrol_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar..
+**tahmin_et butonu:** Girilen cümleye en yakın kalıp cümleleri döner.
+**temizle butonu:** Arayüzü temizler.
