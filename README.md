@@ -50,8 +50,8 @@ Programı VsCode ile çalıştırmak için:
 
 ***PROGRAM ARAYÜZÜ***
 
-**kontrol_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
+**sonraki_kelimeleri_tahmin_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
 
-**tahmin_et butonu:** Girilen cümleye en yakın kalıp cümleleri döner.
+**cümle_öner butonu:** Girilen anahtar kelimeleri kullanarak uygun bir cümle önerisi yapar.
 
 **temizle butonu:** Arayüzü temizler.
