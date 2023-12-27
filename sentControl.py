@@ -2,7 +2,7 @@ import sqlite3
 import re
 
 
-#mainden gelen cümleyi database ile taratarak benzer cümle kalıplarını döner
+#mainden gelen cümleyi database ile taratarak anahtar girdilere uygun cümle kalıplarını döner
 def sentController(param):
 
     con=sqlite3.connect("data.db")
@@ -12,28 +12,25 @@ def sentController(param):
     cursor.execute("SELECT *FROM words")
     data=cursor.fetchall()
     guestText=[]
-
+   
     for i in data:
-        count=0
         text=[]
         eachDataWord=i[0].split("---")
         for k in eachDataWord:
             pureDataWord=k.split(" [")
-            text.append(pureDataWord[0])
+            pureDataWord=pureDataWord[0].split(" ")
+            for p in pureDataWord:
+                text.append(p.lower())
        
-        if(text[1].lower()==(param[0].lower())):
-            for t in text:
-                for p in param:
-                    print(t.lower())
-                    print(p.lower())
-                    if((t.lower()).__contains__(p.lower())):
-                        count+=1
-                               
-        if(count>(len(param)*2)-3):
+        text.pop(0)
+        count=1
+        for p in param:
+            if(text.__contains__(p.lower())):
+                count=count*1
+            else:
+                count=count*0
+        if(count==1):
             guestText.append(text)
-      
-
-    print(guestText)  
     con.close()           
     return guestText
       

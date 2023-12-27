@@ -19,17 +19,15 @@ import re
 
 #arayüzü temizler       
 def cleaning():
-    _label.config(text="")
+    _label.delete(1.0, 'end')
     _entry.delete(0,tk.END)
     _text.config(text="kontrol et")
-
-
+    
 #bir sonraki kelime tahmini yapar
 def changing():
-    _text.config(text="kontrol edildi")
+    _label.delete(1.0, 'end')
+    _text.config(text="işlem gerçekleşti")
     _data=_entry.get()
-                
-                
 
     #kullanıcıdan cümle alır
     _sent=_data
@@ -38,28 +36,39 @@ def changing():
     _sent =re.sub(r'[^\w\s]',' ', _sent)#cümledeki noktalama işaretlerini ayıklar.
 
     allData=""
+    say=0
+    allDatax=""
     suggest=wordController(_sent)
-    for i in suggest:
-        allData=allData+i+"\n"
-
-    if(len(allData)>0):
-        _label.config(text=allData)
-
+    if(_data==""):
+        _label.insert('end', "herhangi bir sonuç bulunamadı")
     else:
-        _sentx=_data.split(" ")
-        suggestx=wordController(_sentx[-1])
-        allDatax=""
-        for i in suggestx:
-            allDatax=allDatax+i+"\n"
+        for i in suggest:
+            say+=1
+            if(say<5):
+                allData=allData+i+"\n"
 
-        _label.config(text=allDatax)
+        if(len(allData)>0):
+            _label.insert('end', allData)
+
+        else:
+            _sentx=_data.split(" ")
+            suggestx=wordController(_sentx[-1])
+            say=0
+            for i in suggestx:
+                say+=1
+                if(say<5):
+                    allDatax=allDatax+i+"\n"
+
+            _label.insert('end', allDatax)
+
+    
 
 
-
-#kalıp olarak verilen cümleyi tamamlar
+#alınan girdileri kullanarak cümle önerisi yapar
 def suggesting():
+    _label.delete(1.0, 'end')
     showLabel=""
-    _text.config(text="tahmin edildi")
+    _text.config(text="işlem gerçekleşti")
     _data=_entry.get()
                 
                 
@@ -72,19 +81,27 @@ def suggesting():
 
     suggest=sentController(_sent.split(" "))
 
-    for eachSuggest in suggest:
-        for s in eachSuggest:
-            showLabel=showLabel+s+" "
-        showLabel=showLabel+"\n"
+    sayan=0
+    
+    for eachSuggest in suggest:  
+        if(sayan<4):      
+            for s in eachSuggest:
+                showLabel=showLabel+s+" "           
+            showLabel=showLabel+"\n"+"---------------------------------------------------------"+"\n"
+            sayan+=1
 
-    _label.config(text=showLabel)
+    if(showLabel==""):
+        _label.insert('end',"herhangi bir sonuç bulunamadı")
+    else:
+        _label.insert('end', showLabel)
 
 
 #arayüz kodları
 _window=tk.Tk()
-_window.geometry('800x400+50+50')
+_window.geometry('1000x600+50+50')
 _window.title("TEXT CORRECTION")
 _window.resizable(False,False)
+
 
 _entry=tk.Entry(width=100)
 _entry.pack()
@@ -92,13 +109,18 @@ _entry.pack()
 _text=tk.Label(_window,text='mesaj girin')
 _text.pack()
 
-_button1=tk.Button(_window,text='kontrol et',command=changing)
+_button1=tk.Button(_window,text='bir sonraki kelimeyi tahmin et',command=changing)
 _button1.pack()
 
-_button3=tk.Button(_window,text='tahmin et',command=suggesting)
+_button3=tk.Button(_window,text='cümle öner',command=suggesting)
 _button3.pack()
 
-_label=tk.Label(text="sonuç")
+_label = tk.Text(_window,height=30,width=120)
+_label.config(state='normal')
+sb = tk.Scrollbar(_window)
+sb.pack(side="right", fill="both")
+_label.config(yscrollcommand=sb.set)
+sb.config(command=_label.yview)
 _label.pack()
 
 _button2=tk.Button(_window,text='temizle',command=cleaning)
