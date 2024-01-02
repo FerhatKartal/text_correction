@@ -10,7 +10,7 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 **createList.py:** Veri setini etiketleyen metottur.
 
-**otoset.py:** Eksik ya da yanlış girilen kelimeler için anlık öneriler sunar.
+**otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulur.
 
 **database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
 
