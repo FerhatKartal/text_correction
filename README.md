@@ -10,6 +10,8 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 **createList.py:** Veri setini etiketleyen metottur.
 
+**otoset.py:** Eksik ya da yanlış girilen kelimeler için anlık öneriler sunar.
+
 **database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
 
 **data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
@@ -49,6 +51,8 @@ Programı VsCode ile çalıştırmak için:
 örneğin; "python wordnet.py"
 
 ***PROGRAM ARAYÜZÜ***
+
+**bunu mu demek istediniz?:** Eksik yada yanlış girilen kelimeler için anlık olarak uygun kelimeler önerir.
 
 **sonraki_kelimeleri_tahmin_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
 
