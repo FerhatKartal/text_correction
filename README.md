@@ -50,6 +50,9 @@ Programı VsCode ile çalıştırmak için:
 
 örneğin; "python wordnet.py"
 
+7)"pip install fuzzywuzzy"
+  "pip install python-Levenshtein" komutları ile fuzzywuzzy kütüphanesi indirilmelidir.Bu kütüphane iki kelimeyi karşılaştırarak benzerlik oranını hesaplar.
+
 ***PROGRAM ARAYÜZÜ***
 
 **bunu mu demek istediniz?:** Eksik yada yanlış girilen kelimeler için anlık olarak uygun kelimeler önerir.
