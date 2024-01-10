@@ -55,6 +55,8 @@ Programı VsCode ile çalıştırmak için:
 
 ***PROGRAM ARAYÜZÜ***
 
+**başlık:** Cümle önerilerinde girilen kelimeyle başlayan cümleler dönülür.
+
 **bunu mu demek istediniz?:** Eksik yada yanlış girilen kelimeler için anlık olarak uygun kelimeler önerir.
 
 **sonraki_kelimeleri_tahmin_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
