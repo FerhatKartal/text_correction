@@ -22,6 +22,7 @@ import re
 def cleaning():
     _label.delete(1.0, 'end')
     _entry.delete(0,tk.END)
+    _title.delete(0,tk.END)
 
 
  #eksik ya da yanlış girilen kelimelere uygun öneriler döndürür
@@ -96,6 +97,7 @@ def suggesting():
     _label.delete(1.0, 'end')
     showLabel=""
     _data=_entry.get()
+    _ttl=_title.get()
                 
                 
 
@@ -118,8 +120,15 @@ def suggesting():
 
     sayan=0
     
-    for eachSuggest in suggest:  
-        if(sayan<4):      
+    for eachSuggest in suggest: 
+        if(_ttl!=None) :
+             if(sayan<4 and eachSuggest[0]==_ttl):      
+                 for s in eachSuggest:
+                    showLabel=showLabel+s+" "           
+                 showLabel=showLabel+"\n"+"---------------------------------------------------------"+"\n"
+                 sayan+=1
+        
+        elif(sayan<4):      
             for s in eachSuggest:
                 showLabel=showLabel+s+" "           
             showLabel=showLabel+"\n"+"---------------------------------------------------------"+"\n"
@@ -138,6 +147,12 @@ _window.title("TEXT CORRECTION")
 _window.resizable(False,False)
 
 
+_title=tk.Entry(width=30)
+_title.pack()
+
+_titleText=tk.Label(_window,text='konu başlığı girin')
+_titleText.pack()
+
 _entry=tk.Entry(width=100)
 _entry.pack()
 
@@ -147,7 +162,7 @@ _text.pack()
 _lbl=tk.Label(_window,text='bunu mu demek istediniz?')
 _lbl.pack()
 
-_oneri=tk.Text(_window,height=5,width=60)
+_oneri=tk.Text(_window,height=5,width=30)
 _oneri.pack()
 
 _button1=tk.Button(_window,text='bir sonraki kelimeyi tahmin et',command=changing)

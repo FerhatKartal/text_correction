@@ -1,1 +1,1 @@
-show_correct()
+for s in eachSuggest:
