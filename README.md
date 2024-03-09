@@ -55,8 +55,8 @@ Programı VsCode ile çalıştırmak için:
 
 ***PROGRAM ARAYÜZÜ***
 
-**mesaj girin:** Kullanıcının kelime girdisi yapacağı alandır.
+**mesaj girin:** Kullanıcının kelime girdisi yapacağı alandır.Her girilen karakterden sonra yeni cümle önerileri yapılır.
 
-**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.
+**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Uygun sonuçlardan en fazla 4 tanesi döndürülür.
 
 **temizle butonu:** Arayüzü temizler.
