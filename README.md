@@ -1,8 +1,10 @@
 ***PROGRAMIN İŞLEVİ***
 
-Program, Türkçe Metin Düzenleme için yapay zeka ve makine öğrenmesi kullanmaktadır. NLP kütüphanesi kullanılarak,veri analizi yapılmaktadır.Veriler cümlelere ve kelimelere ayrılarak ,öğeler tespit edilecek,kelimelerin birbirleriyle mantıksal bağlamları kurulacak ve program girdi olarak verilen cümlelerin mantıksal yönünü denetleyecektir.
+Text Correction, Türkçe Otomatik Metin Düzenleme programıdır. NLP kütüphanesi kullanılarak,veri analizi yapılmaktadır.Veri tabanındaki veriler cümlelere ve kelimelere ayrılarak ,öğeler tespit edilir,kelimelerin birbirleriyle mantıksal bağlamları kurulur.
 
-Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri devam edecektir.
+Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanları doğru olanıyla değiştirir ve girilen cümleyi düzelterek kullanıcıya döndürür.
+
+Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmektedir. Cümle bazında düzeltmeler için metot eklemeleri devam edecektir.
 
 ***PROGRAMDAKİ METOTLAR***
 
@@ -10,7 +12,9 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 
 **createList.py:** Veri setini etiketleyen metottur.
 
-**otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulur.
+**data_register.py:** Veri setini database kaydeden ara metottur.
+
+**otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulan metottur.
 
 **database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
 
@@ -27,10 +31,6 @@ Program geliştirilme aşamasında olduğu için amaca yönelik metot eklemeleri
 **tokenization:** Ham metni cümle ve kelimelere ayırır.
 
 **wordnet:** İki kelimenin birbirine olan benzerlik oranını hesaplar.
-
-**sentControl:** Arayüzden girilen cümleyi cümleyi database ile taratarak benzer cümle kalıplarını döner.
-
-**wordControl:** Arayüzden girilen kelimeleri database taraması yaparak bir sonraki kelimeyi ve öge kalıplarını tahmin eder.
 
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
@@ -55,12 +55,8 @@ Programı VsCode ile çalıştırmak için:
 
 ***PROGRAM ARAYÜZÜ***
 
-**başlık:** Cümle önerilerinde girilen kelimeyle başlayan cümleler dönülür.
+**mesaj girin:** Kullanıcının kelime girdisi yapacağı alandır.
 
-**bunu mu demek istediniz?:** Eksik yada yanlış girilen kelimeler için anlık olarak uygun kelimeler önerir.
-
-**sonraki_kelimeleri_tahmin_et butonu:** Girilen kelimeye uygun kalıp ögeleri döner ve bir sonraki kelime tahminleri yapar.
-
-**cümle_öner butonu:** Girilen anahtar kelimeleri kullanarak uygun bir cümle önerisi yapar.
+**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.
 
 **temizle butonu:** Arayüzü temizler.
