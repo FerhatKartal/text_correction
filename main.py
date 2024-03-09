@@ -1,185 +1,70 @@
-from wordControl import wordController
-from sentControl import sentController
-from createList import createList
 from otoset import otoController
-
+from data_register import register
 import tkinter as tk
-import re
+import sqlite3
 
-#Aşağıda yorum satırına alınmış olan ilk 4 satır kaynaktan çekilen verilerin etiketlenerek database kayıt edilmesi amacıyla yazılmıştır.Bir kere çalıştırıldığı için program her çalıştığında tekrar çalıştırılmasına gerek yoktur.
+# Aşağıdaki satır kaynaktan çekilen verileri etiketleyerek database kayıt eder.
+#Bir kere çalıştırıldığı için program her çalıştığında tekrar çalıştırılmasına gerek yoktur.
 
-# createDatabase() #boş bir database tablosu olusturur
-
-# text=fetchdata()
-
-# liste=createList(text) #metini cümlelere ve kelimelere böler,kelimeleri ögelerine göre etiketler.
-
-# saveDatabase(liste) #etiketlenen metni database kaydeder.
-
+# register()
 #------------------------------------------------------------------------------------------------------   
+
+con=sqlite3.connect("data.db")      #veri tabanına bağlanır.
+cursor=con.cursor()
+    
+cursor.execute("SELECT *FROM words")#tüm datayı çeker.
+allData=cursor.fetchall()
+con.close()   
 
 #arayüzü temizler       
 def cleaning():
-    _label.delete(1.0, 'end')
-    _entry.delete(0,tk.END)
-    _title.delete(0,tk.END)
-
-
+    _oneri.delete(1.0, 'end') #öneri bölümünü temizler
+    _entry.delete(0,tk.END)   #girdi bölümünü temizler
+    
  #eksik ya da yanlış girilen kelimelere uygun öneriler döndürür
 def show_correct():
-     _oneri_arr=[]
-     _oneri_text=""
-     _oneri.delete(1.0,'end')
-     _data=_entry.get()
-     _data=_data.split(" ")
-     _data=_data[-1]
-     _data=_data.strip()
-     _oneri_arr=otoController(_data)
-     _oneri_arr=set(_oneri_arr)
+     _oneri.config(state= "normal") #öneri bölümünü "yazılabilir" yapar.
+     _oneri_arr=[]                  #gelen önerileri tutmak için boş bir öneri dizisi oluşturur.
+     _oneri_text=""                 #gelen her bir öneriyi tutmak için boş bir öneri stringi oluşturur.
+     _oneri.delete(1.0,'end')       #öneri bölümünü temizler.
+     _data=_entry.get()             #girdi olarak verilen datayı alır.
+     _data=_data.split(" ")         #girdiyi boşluklara göre split eder.
+     _data=_data[-1]                #split edilen diziden son girdiyi alır.
+     _data=_data.strip()            #son girdiyi noktalama işaretlerinden ayıklar.
+     _oneri_arr=otoController(_data,allData)#girdi ve toplam datayı göndererek girdiye uygun sonuçları getirir.
+     _oneri_arr=set(_oneri_arr)     #sonuçları tekrarsız diziye çevirir.
 
-     limit=0
-     for i in _oneri_arr:
-         if(limit<4):
-             _oneri_text=_oneri_text+i+"\n"
-             limit=limit+1
-             
-
-     if(_data!=None):
+     
+     for i in _oneri_arr:               #sonucu text'e çevirir.
+        _oneri_text=_oneri_text+i+"\n"
+        
+     if(_data!=None):                   #başka bir girdi yoksa sonuçları yazdırır.
         _oneri.insert('end',_oneri_text)
 
-     _window.after(1000,show_correct)
-
-
-
-
-#bir sonraki kelime tahmini yapar
-def changing():
-    _label.delete(1.0, 'end')
-    _data=_entry.get()
-
-    #kullanıcıdan cümle alır
-    _sent=_data
-    _sent=_sent.lower()#tüm harfleri küçük harf yapar.
-                    
-    _sent =re.sub(r'[^\w\s]',' ', _sent)#cümledeki noktalama işaretlerini ayıklar.
-
-    allData=""
-    say=0
-    allDatax=""
-    suggest=wordController(_sent)
-    if(_data.strip()==""):
-        _label.insert('end', "herhangi bir sonuç bulunamadı")
-    else:
-        for i in suggest:
-            say+=1
-            if(say<5):
-                allData=allData+i+"\n"
-
-        if(len(allData)>0):
-            _label.insert('end', allData)
-
-        else:
-            _sentx=_data.split(" ")
-            suggestx=wordController(_sentx[-1])
-            say=0
-            for i in suggestx:
-                say+=1
-                if(say<5):
-                    allDatax=allDatax+i+"\n"
-
-            _label.insert('end', allDatax)
-
-    
-
-
-#alınan girdileri kullanarak cümle önerisi yapar
-def suggesting():
-    _label.delete(1.0, 'end')
-    showLabel=""
-    _data=_entry.get()
-    _ttl=_title.get()
-                
-                
-
-    #kullanıcıdan cümle alır
-    arr=[]
-    _sent=_data
-    _sent=_sent.lower()#tüm harfleri küçük harf yapar.
-                    
-    _sent =re.sub(r'[^\w\s]',' ', _sent)#cümledeki noktalama işaretlerini ayıklar.
-
-    _sent=_sent.split(" ")
-    for s in _sent:
-        s.strip()
-        if(s==" " or s==""):
-            continue
-        else:
-            arr.append(s)
-
-    suggest=sentController(arr)
-
-    sayan=0
-    
-    for eachSuggest in suggest: 
-        if(_ttl!=None) :
-             if(sayan<4 and eachSuggest[0]==_ttl):      
-                 for s in eachSuggest:
-                    showLabel=showLabel+s+" "           
-                 showLabel=showLabel+"\n"+"---------------------------------------------------------"+"\n"
-                 sayan+=1
-        
-        elif(sayan<4):      
-            for s in eachSuggest:
-                showLabel=showLabel+s+" "           
-            showLabel=showLabel+"\n"+"---------------------------------------------------------"+"\n"
-            sayan+=1
-
-    if(showLabel==""):
-        _label.insert('end',"herhangi bir sonuç bulunamadı")
-    else:
-        _label.insert('end', showLabel)
+     _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.
+     _window.after(1000,show_correct)   #her saniye girdi bölümünü denetler ve öneri fonksiyonunu çalıştırır
 
 
 #arayüz kodları
-_window=tk.Tk()
-_window.geometry('1000x600+50+50')
+_window=tk.Tk()                     #pencere genel ayarları
+_window.geometry('600x600+50+50')
 _window.title("TEXT CORRECTION")
 _window.resizable(False,False)
 
 
-_title=tk.Entry(width=30)
-_title.pack()
-
-_titleText=tk.Label(_window,text='konu başlığı girin')
-_titleText.pack()
-
-_entry=tk.Entry(width=100)
+_entry=tk.Entry(width=100)         #girdi kutusu
 _entry.pack()
 
-_text=tk.Label(_window,text='mesaj girin')
+_text=tk.Label(_window,text='mesaj girin') #girdi kutusunun ismi
 _text.pack()
 
-_lbl=tk.Label(_window,text='bunu mu demek istediniz?')
+_lbl=tk.Label(_window,text='öneriler')  #önerilen kelimeler kutusunun adı
 _lbl.pack()
 
-_oneri=tk.Text(_window,height=5,width=30)
+_oneri=tk.Text(_window,height=5,width=30) #önerilen kelimeler kutusu
 _oneri.pack()
 
-_button1=tk.Button(_window,text='bir sonraki kelimeyi tahmin et',command=changing)
-_button1.pack()
-
-_button3=tk.Button(_window,text='cümle öner',command=suggesting)
-_button3.pack()
-
-_label = tk.Text(_window,height=20,width=120)
-_label.config(state='normal')
-sb = tk.Scrollbar(_window)
-sb.pack(side="right", fill="both")
-_label.config(yscrollcommand=sb.set)
-sb.config(command=_label.yview)
-_label.pack()
-
-_button2=tk.Button(_window,text='temizle',command=cleaning)
+_button2=tk.Button(_window,text='temizle',command=cleaning) #girdi ve önerileri temizleyen buton
 _button2.pack()
 
 show_correct()

@@ -2,7 +2,7 @@ from tokenization import sentTokenize
 from pos_tag import posTag
 from stop_words import stopWords
 
-# main'den gelen düz metni etiketler.
+# düz metni etiketler.
 def createList(text):
     #metin cümlelere ayrıldıktan sonra ,cümle içindeki ogeler tespit edilir
     #art arda gelen aynı ogeler tek bir blok oge olarak ele alınır
@@ -23,7 +23,7 @@ def createList(text):
                 if(insublist==[]):#kelime ogelerinin tekrarlı olanları bulmak için geçici listelere atılır(liste işlemin başında boştur)
                     insublist.append(word)
                     sublist.append(insublist)
-                elif( word[1].__eq__(insublist[-1][1])):#kelime ogesi bir önceki ile aynıysa aynı gruba alınır
+                elif( word[1].__eq__(insublist[-1][1]) and word[1].__eq__("NNP")):#kelime ogesi bir önceki ile aynıysa aynı gruba alınır
                     insublist.append(word)
                     count+=1
                 else: #kelime ögesi bir öncekiyle aynı değilse ayrı liste elemanı olarak işleme devam eder
@@ -36,4 +36,4 @@ def createList(text):
         if(len(sublist)>2 and sublist[0]==sublist[1]):
             sublist.remove(sublist[0])
         liste.append(sublist)#ögeleri belirlenerek,gruplandırılan cümle metne aktarılır
-    return liste#etiketlenen metin main'e döndürülür.
+    return liste#etiketlenen metin döndürülür.
