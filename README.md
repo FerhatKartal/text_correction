@@ -58,7 +58,7 @@ Programı VsCode ile çalıştırmak için:
 
 **mesaj girin:** Kullanıcının cümle girdisi yapacağı alandır.
 
-**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Uygun sonuçlardan en fazla 10 tanesi döndürülür.
+**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Her kelime için uygun sonuçlardan en fazla 10 tanesi döndürülür.
 
 **düzelt:** öneriler bölümünün çalışmasını sağlar.
 
