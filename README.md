@@ -60,6 +60,6 @@ Programı VsCode ile çalıştırmak için:
 
 **öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Her kelime için uygun sonuçlardan en fazla 10 tanesi döndürülür.
 
-**düzelt:** öneriler bölümünün çalışmasını sağlar.
+**düzelt butonu:** öneriler bölümünün çalışmasını sağlar.
 
 **temizle butonu:** Arayüzü temizler.
