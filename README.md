@@ -18,6 +18,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
 
+**correctwords.txt:** Türkçede sözlük olarak kullanılan dosyadır.
+
 **data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
 
 **text.py:** Veri setini tutar.
@@ -46,17 +48,18 @@ Programı VsCode ile çalıştırmak için:
 
 5)"pip install nltk" komutu ile nltk kütüphanesi kurulur.
 
-6)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
+6)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
+
+7)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
 
 örneğin; "python wordnet.py"
 
-7)"pip install fuzzywuzzy"
-  "pip install python-Levenshtein" komutları ile fuzzywuzzy kütüphanesi indirilmelidir.Bu kütüphane iki kelimeyi karşılaştırarak benzerlik oranını hesaplar.
-
 ***PROGRAM ARAYÜZÜ***
 
-**mesaj girin:** Kullanıcının kelime girdisi yapacağı alandır.Her girilen karakterden sonra yeni cümle önerileri yapılır.
+**mesaj girin:** Kullanıcının cümle girdisi yapacağı alandır.
 
-**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Uygun sonuçlardan en fazla 4 tanesi döndürülür.
+**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Uygun sonuçlardan en fazla 10 tanesi döndürülür.
+
+**düzelt:** öneriler bölümünün çalışmasını sağlar.
 
 **temizle butonu:** Arayüzü temizler.
