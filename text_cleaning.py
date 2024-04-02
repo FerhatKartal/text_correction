@@ -1,6 +1,7 @@
 #metni noktalama işaretlerinden ve özel karakterlerden arındırmak. 
 
 import string
-from text import text
+# from text import text
+def cleaning(text):
 
-print(text.translate(str.maketrans(" "," ",string.punctuation)))
+    return text.translate(str.maketrans(" "," ",string.punctuation))
