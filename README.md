@@ -1,24 +1,24 @@
 ***PROGRAMIN İŞLEVİ***
 
-Text Correction, Türkçe Otomatik Metin Düzenleme programıdır. NLP kütüphanesi kullanılarak,veri analizi yapılmaktadır.Veri tabanındaki veriler cümlelere ve kelimelere ayrılarak ,öğeler tespit edilir,kelimelerin birbirleriyle mantıksal bağlamları kurulur.
+Text Correction, Doğal Dil İşleme alanında çalışılan bir Türkçe Otomatik Metin Düzeltme programıdır.Veri tabanında bulunan farklı web sayfalarından çekilen verilerden faydalanılarak kelimelerin birbirleriyle mantıksal bağlamları kurulmaya çalışılmaktadır.
 
-Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanları doğru olanıyla değiştirir ve girilen cümleyi düzelterek kullanıcıya döndürür.
+Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanları doğru olanıyla değiştirir ve girilen cümleyi mantıksal bağlamda düzelterek kullanıcıya döndürür.
 
 Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmektedir. Cümle bazında düzeltmeler için metot eklemeleri devam edecektir.
 
 ***PROGRAMDAKİ METOTLAR***
 
-**main.py:** Programı yöneten ana metottur.
+**main.py:** Programı yöneten ana metottur.Arayüz sağlar.
 
 **otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulan metottur.
 
 **correctwords.txt:** Türkçede sözlük olarak kullanılan dosyadır.
 
-**data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
+**data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
 
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.
 
-**text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırmak. 
+**text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır. 
 
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
