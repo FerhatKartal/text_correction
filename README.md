@@ -10,10 +10,6 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **main.py:** Programı yöneten ana metottur.
 
-**createList.py:** Veri setini etiketleyen metottur.
-
-**data_register.py:** Veri setini database kaydeden ara metottur.
-
 **otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulan metottur.
 
 **database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
@@ -22,17 +18,9 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
 
-**text.py:** Veri setini tutar.
-
-**pos_tag:** Bu fonksiyon sayesinde, cümlemizdeki özel isimleri, sıfatları vb. bulabiliriz.
-
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.
 
 **text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırmak. 
-
-**tokenization:** Ham metni cümle ve kelimelere ayırır.
-
-**wordnet:** İki kelimenin birbirine olan benzerlik oranını hesaplar.
 
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
