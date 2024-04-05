@@ -12,8 +12,6 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulan metottur.
 
-**database.py:** Database tablosu oluşturan ve etiketlenen veriyi tabloya kaydeden metottur.
-
 **correctwords.txt:** Türkçede sözlük olarak kullanılan dosyadır.
 
 **data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı açmak için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilmelidir.
