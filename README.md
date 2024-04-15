@@ -1,8 +1,8 @@
 ***PROGRAMIN İŞLEVİ***
 
-Text Correction, Doğal Dil İşleme alanında çalışılan bir Türkçe Otomatik Metin Düzeltme programıdır.Veri tabanında bulunan farklı web sayfalarından çekilen verilerden faydalanılarak kelimelerin birbirleriyle mantıksal bağlamları kurulmaya çalışılmaktadır.
+Text Correction, Türkçe Otomatik Metin Düzeltme programıdır.Girdi olarak verilen bir cümledeki kelimelerin birbirleriyle mantıksal bağlamları kurulmaya çalışılmaktadır.
 
-Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanları doğru olanıyla değiştirir ve girilen cümleyi mantıksal bağlamda düzelterek kullanıcıya döndürür.
+Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanlarını doğru olanıyla değiştirir ve girilen cümleyi mantıksal bağlamda düzelterek kullanıcıya döndürür.
 
 Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmektedir. Cümle bazında düzeltmeler için metot eklemeleri devam edecektir.
 
@@ -10,15 +10,15 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **main.py:** Programı yöneten ana metottur.Arayüz sağlar.
 
-**otoset.py:** Eksik ya da yanlış girilen kelimeler için veri tabanındaki yakın kelimeleri bulan metottur.
+**otoset.py:** Eksik ya da yanlış girilen kelimelere alternatif kelimeleri bulan metottur.
 
-**correctwords.txt:** Türkçede sözlük olarak kullanılan dosyadır.
+**correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75775 adet kelime bulunmaktadır.
 
-**data.db:** Program tarafından oluşturulan database dosyasıdır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
+**data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
 
-**stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.
+**stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.Nltk kütüphanesine aittir.
 
-**text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır. 
+**text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır.Nltk kütüphanesine aittir.
 
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
