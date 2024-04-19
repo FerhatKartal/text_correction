@@ -1,0 +1,24 @@
+import random
+def write_ascii_table():
+
+    print("------ASCII TABLOSU-------")
+    for i in range(256):
+        x=chr(i)
+        if(i>32 and i!=127 and i!=173 and (i<128 or i>161)):
+            print(f'|karakter: {str(chr(i))} | decimal: {ord(x)} |hex: {hex(i)} |')
+        
+def asal_bul():
+    count=0
+    r=random.randint(3,20)
+    for i in range(2,r):
+        if(r%i==0):
+            count+=1
+    if(count==0):
+        return r
+    else:
+        count=0
+        return asal_bul()
+        
+
+    
+print(asal_bul())
