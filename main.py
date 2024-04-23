@@ -2,6 +2,7 @@ from otoset import otoController
 # from data_register import register
 import tkinter as tk
 import sqlite3
+from _n_gram import nGrams
 
 # Aşağıdaki satır kaynaktan çekilen verileri etiketleyerek database kayıt eder.
 #Bir kere çalıştırıldığı için program her çalıştığında tekrar çalıştırılmasına gerek yoktur.
@@ -35,8 +36,17 @@ dosya.close()
 
 total=words+text #total dizisi iki veri tabanından gelen verileri birleştirir
  
-
-
+#veri tabanından gelen kelimeleri cümle dizisine çeviren metot
+cumleler=[]
+for i in datadb:
+    kelimeler=""
+    eachDataWord=i[0].split("---")
+    for k in eachDataWord:
+        pureDataWord=k.split(" [")
+        pureDataWord=pureDataWord[0].split(" ")
+        for p in pureDataWord:
+            kelimeler+=p+" "
+    cumleler.append(kelimeler.strip())
 
 #arayüzü temizler       
 def cleaning():
@@ -58,23 +68,38 @@ def show_correct():
       _oneri_arr=otoController(i,total)#girdi ve toplam datayı göndererek girdiye uygun sonuçları getirir.
       _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
      
-    
-     
+     print(_total_arr)
+     deneme=[]
+     hepsi=""
+     for i in range(len(_total_arr)):
+         if(i<len(_total_arr)-1):
+            for k in _total_arr[i]:
+                for j in _total_arr[i+1]:
+                    deneme.append(nGrams(k+" "+j,cumleler[:10],2))
 
-     s=0
-     while(s<10):                       #en fazla 10 adet öneri dönülmesini garanti eder.
-      for i in range(len(_total_arr)): #sonucların arayüze yazılması için sıraya koyar.
-            if(len(_total_arr[i])>s and len(_total_arr[i])>0):     
-               _oneri_text=_oneri_text+_total_arr[i][s]+"--"
-            else:
-               _oneri_text=_oneri_text+"bulunamadı"+"--"  #sonuç yoksa uyarı yazar.
+     for l in deneme:
+         if(len(l)>0):
+                print(l[0])
+                hepsi+=str(l[0])+"---" +"\n"         
+     _oneri.insert('end',hepsi)
+
+     _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.             
         
-      s+=1
-      _oneri_text=_oneri_text+"\n"
-    
-     _oneri.insert('end',_oneri_text)
 
-     _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.
+    #  s=0
+    #  while(s<10):                       #en fazla 10 adet öneri dönülmesini garanti eder.
+    #   for i in range(len(_total_arr)): #sonucların arayüze yazılması için sıraya koyar.
+    #         if(len(_total_arr[i])>s and len(_total_arr[i])>0):     
+    #            _oneri_text=_oneri_text+_total_arr[i][s]+"--"
+    #         else:
+    #            _oneri_text=_oneri_text+"bulunamadı"+"--"  #sonuç yoksa uyarı yazar.
+        
+    #   s+=1
+    #   _oneri_text=_oneri_text+"\n"
+    
+    #  _oneri.insert('end',_oneri_text)
+
+    #  _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.
      
 
 
