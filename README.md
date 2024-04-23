@@ -10,6 +10,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **main.py:** Programı yöneten ana metottur.Arayüz sağlar.
 
+**_n_gram.py:** Metni belirtilen n-gram derecesine göre analiz eder.
+
 **otoset.py:** Eksik ya da yanlış girilen kelimelere alternatif kelimeleri bulan metottur.
 
 **correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75775 adet kelime bulunmaktadır.
