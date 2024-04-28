@@ -36,9 +36,11 @@ Programı VsCode ile çalıştırmak için:
 
 5)"pip install nltk" komutu ile nltk kütüphanesi kurulur.
 
-6)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
+6)"pip install ngram" komutu ile ngram kütüphanesi kurulur.
 
-7)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
+7)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
+
+8)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
 
 örneğin; "python wordnet.py"
 
