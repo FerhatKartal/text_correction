@@ -12,11 +12,11 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **otoset.py:** Eksik ya da yanlış girilen kelimelere alternatif kelimeleri bulan metottur.
 
-**correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75775 adet kelime bulunmaktadır.
+**correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75,775 adet kelime bulunmaktadır.
 
-**data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
+**data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47,959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
 
-**data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.
+**data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.675,953 adet bigram datası bulunur.
 
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.Nltk kütüphanesine aittir.
 
