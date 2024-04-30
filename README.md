@@ -10,13 +10,13 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **main.py:** Programı yöneten ana metottur.Arayüz sağlar.
 
-**_n_gram.py:** Metni belirtilen n-gram derecesine göre analiz eder.
-
 **otoset.py:** Eksik ya da yanlış girilen kelimelere alternatif kelimeleri bulan metottur.
 
 **correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75775 adet kelime bulunmaktadır.
 
 **data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
+
+**data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.
 
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.Nltk kütüphanesine aittir.
 
@@ -36,11 +36,9 @@ Programı VsCode ile çalıştırmak için:
 
 5)"pip install nltk" komutu ile nltk kütüphanesi kurulur.
 
-6)"pip install ngram" komutu ile ngram kütüphanesi kurulur.
+6)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
 
-7)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
-
-8)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
+7)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
 
 örneğin; "python wordnet.py"
 
