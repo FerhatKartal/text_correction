@@ -2,14 +2,26 @@ from text_cleaning import cleaning
 import textdistance as td
 
 #mainden gelen kelime eksik ya da yanlış ise düzelterek dönderir
-def otoController(param,total):   
+def otoController(param,total,indexx): 
+
+    z_index=0
+    
+    x=param.lstrip()   #param rakamsal değeri hesaplanır
+    z_index=0
+    for i in x:
+        z_index+=(ord(i))
+        
+     
+
     guestText=[]                #toplam sonucu tutacak dizi
     guestScore=[]               #benzerlik oranını tutacak dizi
-    box=10                      #her kelime için kaç öneri dönüleceğini belirleyen değişken
+    box=6                      #her kelime için kaç öneri dönüleceğini belirleyen değişken
 
-    for t in total:  
-                
-     if(t.strip()!=""):       #her kelimeyi noktalama işaretlerinden temizler.
+    counter=-1
+    for t in total: 
+     counter+=1 
+     m=indexx[counter]        
+     if(t.strip()!="" and abs(m-z_index)<120):  #her kelimenin karşılaştırılacağı kelimeleri kısıtlar.
         t=cleaning(t.strip()) 
         param=cleaning(param.strip())
 
@@ -26,8 +38,7 @@ def otoController(param,total):
 
 
     #en benzer kelimeleri belirleyen metot
-        if((rangeoflike>=60)
-           and (abs(len(param)-len(t))<2)
+        if((rangeoflike>=60 and rangeoflike<100)
            and guestText.count(t.strip().lower())==0):         
                  
             if(len(guestText)<box):
@@ -39,7 +50,7 @@ def otoController(param,total):
                         guestScore[i]=rangeoflike
                         guestText[i]=t
                             
-    
+    guestText.append(param)
     return guestText
 
 

@@ -2,7 +2,6 @@ from otoset import otoController
 # from data_register import register
 import tkinter as tk
 import sqlite3
-from _n_gram import nGrams
 
 # Aşağıdaki satır kaynaktan çekilen verileri etiketleyerek database kayıt eder.
 #Bir kere çalıştırıldığı için program her çalıştığında tekrar çalıştırılmasına gerek yoktur.
@@ -10,7 +9,7 @@ from _n_gram import nGrams
 # register()
 #------------------------------------------------------------------------------------------------------   
 
-#DATADB'DEN ÇEKİLEN VERİLER
+
 text=[]                             #parse edilen kelimeleri tutacak dizi
 con=sqlite3.connect("data.db")      #veri tabanına bağlanır.
 cursor=con.cursor()   
@@ -35,18 +34,86 @@ words = dosya.readlines()
 dosya.close()
 
 total=words+text #total dizisi iki veri tabanından gelen verileri birleştirir
+
+iki=[]         #veri aramasını hızlandırmak için datalar kelime uzunluğuna göre gruplara ayrılır
+uc=[]
+dort=[]
+bes=[]
+alti=[]
+yedi=[]
+sekiz=[]
+dokuz=[]
+on=[]
+iki_index=[]         #veri aramasını hızlandırmak için datalar kelimelerdeki harflerin değerlerinin toplamına göre gruplara ayrılır
+uc_index=[]
+dort_index=[]
+bes_index=[]
+alti_index=[]
+yedi_index=[]
+sekiz_index=[]
+dokuz_index=[]
+on_index=[]
+
+total2=[]
+for k in total:
+    x=k.lstrip()
+    c=0
+    for i in x:
+        c+=(ord(i))
+    
+    total2.append(c)
+    
+    
+
+for i in range(len(total)):
+    s=i
+    i=str(total[i])
+    if(len(i)==1 or len(i)==2 or len(i)==3):
+        iki.append(i)
+        iki_index.append(total2[s])
+    if(len(i)==2 or len(i)==3 or len(i)==4):
+        uc.append(i)
+        uc_index.append(total2[s])
+    if(len(i)==3 or len(i)==4 or len(i)==5):
+        dort.append(i)
+        dort_index.append(total2[s])
+    if(len(i)==4 or len(i)==5 or len(i)==6):
+        bes.append(i)
+        bes_index.append(total2[s])
+    if(len(i)==5 or len(i)==6 or len(i)==7):
+        alti.append(i)
+        alti_index.append(total2[s])
+    if(len(i)==6 or len(i)==7 or len(i)==8):
+        yedi.append(i)
+        yedi_index.append(total2[s])
+    if(len(i)==7 or len(i)==8 or len(i)==9):
+        sekiz.append(i)
+        sekiz_index.append(total2[s])
+    if(len(i)==8 or len(i)==9 or len(i)==10):
+        dokuz.append(i)
+        dokuz_index.append(total2[s])
+    if(len(i)==9 or len(i)>=10):
+        on.append(i)
+        on_index.append(total2[s])
+
+
+ikilemeler=[]
+for i in words:
+    k=i.split(" ")
+    if(len(k)==2):
+        ikilemeler.append(str((k[0].strip())+" "+(k[1].strip()))) 
+        
  
-#veri tabanından gelen kelimeleri cümle dizisine çeviren metot
-cumleler=[]
-for i in datadb:
-    kelimeler=""
-    eachDataWord=i[0].split("---")
-    for k in eachDataWord:
-        pureDataWord=k.split(" [")
-        pureDataWord=pureDataWord[0].split(" ")
-        for p in pureDataWord:
-            kelimeler+=p+" "
-    cumleler.append(kelimeler.strip())
+text2=[]
+con2=sqlite3.connect("data_gram2.db") #veri tabanına bağlanır.
+cursor2=con2.cursor()   
+cursor2.execute("SELECT *FROM words")#tüm datayı çeker.
+datadb2=cursor2.fetchall()
+con2.close() 
+for i in datadb2:
+    text2.append(str(i[0].strip()).lower())
+
+text2+=ikilemeler
 
 #arayüzü temizler       
 def cleaning():
@@ -58,50 +125,60 @@ def show_correct():
      _oneri.config(state= "normal") #öneri bölümünü "yazılabilir" yapar.
      _total_arr=[]                  #cümledeki tüm önerilen kelimeleri tutar.
      _oneri_arr=[]                  #gelen önerileri tutmak için boş bir öneri dizisi oluşturur.
-     _oneri_text=""                 #gelen her bir öneriyi tutmak için boş bir öneri stringi oluşturur.
      _oneri.delete(1.0,'end')       #öneri bölümünü temizler.
      _data=_entry.get()             #girdi olarak verilen datayı alır.
      _data=_data.split(" ")         #girdiyi boşluklara göre split eder.
     
-     for i in _data:
-      _data=i.strip()                  #girdiyi noktalama işaretlerinden ayıklar.
-      _oneri_arr=otoController(i,total)#girdi ve toplam datayı göndererek girdiye uygun sonuçları getirir.
+     for i in _data: #girdiyi noktalama işaretlerinden ayıklar.
+      _data=i.strip() 
+      if(len(_data)==2):  #girdi kelimesine uygun olan dizi belirlenir
+          w=iki
+          z=iki_index
+      elif(len(_data)==3):
+        w=uc 
+        z=uc_index
+      elif(len(_data)==4):
+        w=dort
+        z=dort_index 
+      elif(len(_data)==5):
+        w=bes 
+        z=bes_index
+      elif(len(_data)==6):
+        w=alti 
+        z=alti_index
+      elif(len(_data)==7):
+        w=yedi 
+        z=yedi_index
+      elif(len(_data)==8):
+        w=sekiz 
+        z=sekiz_index
+      elif(len(_data)==9):
+        w=dokuz
+        z=dokuz_index
+      elif(len(_data)>9):
+        w=on 
+        z=on_index                
+      _oneri_arr=otoController(i,w,z)#girdi,sözlük datasını,kelimelerin rakamsal değerleri göndererek girdiye uygun sonuçları getirir.
       _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
      
-     print(_total_arr)
+    #  print(_total_arr)
      deneme=[]
      hepsi=""
-     for i in range(len(_total_arr)):
+     for i in range(len(_total_arr)):       #benzer kelimeleri ngram analizine verir
          if(i<len(_total_arr)-1):
             for k in _total_arr[i]:
                 for j in _total_arr[i+1]:
-                    deneme.append(nGrams(k+" "+j,cumleler[:10],2))
+                    if(text2.__contains__(k+" "+j)):
+                        deneme.append(k+" "+j)
 
-     for l in deneme:
+     for l in deneme:           #ngram sonuçlarını ekrana yazar
          if(len(l)>0):
-                print(l[0])
-                hepsi+=str(l[0])+"---" +"\n"         
+                # print(l)
+                hepsi+=str(l)+"---" +"\n"         
      _oneri.insert('end',hepsi)
 
      _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.             
         
-
-    #  s=0
-    #  while(s<10):                       #en fazla 10 adet öneri dönülmesini garanti eder.
-    #   for i in range(len(_total_arr)): #sonucların arayüze yazılması için sıraya koyar.
-    #         if(len(_total_arr[i])>s and len(_total_arr[i])>0):     
-    #            _oneri_text=_oneri_text+_total_arr[i][s]+"--"
-    #         else:
-    #            _oneri_text=_oneri_text+"bulunamadı"+"--"  #sonuç yoksa uyarı yazar.
-        
-    #   s+=1
-    #   _oneri_text=_oneri_text+"\n"
-    
-    #  _oneri.insert('end',_oneri_text)
-
-    #  _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.
-     
-
 
 #arayüz kodları
 _window=tk.Tk()                     #pencere genel ayarları
