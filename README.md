@@ -10,6 +10,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **main.py:** Programı yöneten ana metottur.Arayüz sağlar.
 
+**arrays_and_indexes.py:** veri tabanlarından çekilen verileri kelime uzunluğuna ve toplam harf değerlerine göre gruplandırır.
+
 **otoset.py:** Eksik ya da yanlış girilen kelimelere alternatif kelimeleri bulan metottur.
 
 **correctwords.txt:** Türkçe sözlük olarak kullanılan dosyadır.75,775 adet kelime bulunmaktadır.
