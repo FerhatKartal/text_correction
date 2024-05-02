@@ -16,6 +16,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **correctwords.db:** Türkçe sözlük olarak kullanılan dosyadır.75,775 adet kelime bulunmaktadır.
 
+**correctwords.py:** correctwords.db datalarını çeker.
+
 **data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47,959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
 
 **data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.675,953 adet bigram datası bulunur.
