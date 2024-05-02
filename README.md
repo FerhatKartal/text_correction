@@ -22,6 +22,10 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47,959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
 
+**data_set.db:** Ekli halleri bulunan kelimeleri tutar.
+
+**data_set.py:** data_set.db datalarını çeker.
+
 **data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.675,953 adet bigram datası bulunur.
 
 **data_gram2.py:** data_gram2.db verilerini çeker.
