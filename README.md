@@ -32,6 +32,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **order_results.py:** n_gram datalarını normal cümleye çevirir.
 
+**result.py:** düzeltilen girdi datalarını n_gram datalarıyla karşılaştırır.
+
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.Nltk kütüphanesine aittir.
 
 **text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır.Nltk kütüphanesine aittir.
