@@ -24,6 +24,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data_gram2.db:** data.db ve correctwords.txt datalarının bigram versiyonlarını tutar.675,953 adet bigram datası bulunur.
 
+**data_gram2.py:** data_gram2.db verilerini çeker.
+
 **stop_words:** Metinden bir öznitelik çıkarımı yaparken herhangi bir önem taşımayan kelimelerden kurtulunur.Nltk kütüphanesine aittir.
 
 **text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır.Nltk kütüphanesine aittir.
