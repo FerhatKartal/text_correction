@@ -15,7 +15,7 @@ def otoController(param,total,indexx):
 
     guestText=[]                #toplam sonucu tutacak dizi
     guestScore=[]               #benzerlik oranını tutacak dizi
-    box=6                      #her kelime için kaç öneri dönüleceğini belirleyen değişken
+    box=10                      #her kelime için kaç öneri dönüleceğini belirleyen değişken
 
     counter=-1
     for t in total: 
