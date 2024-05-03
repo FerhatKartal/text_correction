@@ -1,6 +1,11 @@
 import numpy as np
 
-def order_result(results,data):     #ngram datalarını uygun cümleye çeviren metot
+def order_result(results,oneriler):     #ngram datalarını uygun cümleye çeviren metot
+
+    data=""
+    for i in oneriler:
+        data+=i[0]+" "
+    data=data.strip()
 
     data_splited=data.split(" ")
     data_len=len(data_splited)
@@ -12,6 +17,7 @@ def order_result(results,data):     #ngram datalarını uygun cümleye çeviren 
         satir = []     
         matris.append(satir)
 
+    
     results_arr=results.split(",")
     for k in results_arr:
         splited_k=k.split("-")
@@ -27,7 +33,6 @@ def order_result(results,data):     #ngram datalarını uygun cümleye çeviren 
         if(number_arr.count(i)==0):
             matris[i]=[data_splited[i]]
 
-    
     v=0
     for i in matris:
         if(v==0):
@@ -42,13 +47,9 @@ def order_result(results,data):     #ngram datalarını uygun cümleye çeviren 
     sceen=""
     z=0
     for i in matris2:
-        if(z==0):
-            sceen+=i+" "
-        else:
-            f=i.split(" ")
-            if(len(f)==2):
-                sceen+=f[1]+" "
-        z+=1
+        f=i.split(" ")
+        sceen+=f[0]+" "
+        
     return sceen
    
 

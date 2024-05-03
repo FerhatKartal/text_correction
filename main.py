@@ -45,7 +45,7 @@ def show_correct():
       _oneri_arr=otoController(i,data_index[0],data_index[1])#girdi,sözlük datasını,kelimelerin rakamsal değerleri göndererek girdiye uygun sonuçları getirir.
       _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
      datas_results=results(_total_arr,n2grams)    #dataları ngram analizine verir.
-     ordered_results=order_result(datas_results,_data_pure.strip())#datayı doğru dizilimli cümlelere çevirir.
+     ordered_results=order_result(datas_results,_total_arr)#datayı doğru dizilimli cümlelere çevirir.
     
      _oneri.insert('end',ordered_results)    #sonucu öneri bölümüne yazar.
 
