@@ -51,7 +51,7 @@ def otoController(param,total,indexx):
                         guestText[i]=t
 
            
-            for i in range(len(guestScore)-2):
+        for i in range(len(guestScore)-1):
                 if(guestScore[i]<guestScore[i+1]):
                     tmp_score=guestScore[i]
                     guestScore[i]=guestScore[i+1] 

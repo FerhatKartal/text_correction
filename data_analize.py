@@ -1,6 +1,6 @@
 def analize(_data,total):
       _data=_data.strip() 
-      if(len(_data)==2):  #girdi kelimesine uygun olan dizi belirlenir
+      if(len(_data)<=2):  #girdi kelimesine uygun olan dizi belirlenir
           w=total[0]
           z=total[9]
       elif(len(_data)==3):

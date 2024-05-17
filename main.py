@@ -5,7 +5,7 @@ from correctwords import correctwords_py
 from arrays_and_indexes import arrayAndIndexes
 from data_analize import analize
 from result import results
-from order_results import order_result
+from order_result import order_result
 import tkinter as tk
 import sqlite3
 
