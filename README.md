@@ -36,7 +36,7 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data_postag.py:** çıktıların kelime analizlerini yapar.
 
-**order_results.py:** n_gram datalarını normal cümleye çevirir.
+**order_result.py:** n_gram datalarını normal cümleye çevirir.
 
 **result.py:** düzeltilen girdi datalarını n_gram datalarıyla karşılaştırır.
 
