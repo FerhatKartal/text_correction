@@ -30,6 +30,10 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data_gram2.py:** data_gram2.db verilerini çeker.
 
+**data_postag.db:** verilerin etiketlenmiş halini içerir.
+
+**data_postag.py:** data_postag.db'den verileri çeker.
+
 **order_results.py:** n_gram datalarını normal cümleye çevirir.
 
 **result.py:** düzeltilen girdi datalarını n_gram datalarıyla karşılaştırır.
