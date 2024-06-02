@@ -20,7 +20,7 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data_analize.py:** Girdiye uygun data gruplarını belirler.
 
-**data.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47,959 adet cümle bulunmaktadır.Bu dosyayı görüntülemek için ,işletim sistemine uygun olan "sqlLite veri tabanı motoru" indirilebilir.
+**dataPure.db:** Cümle bazında analiz yapmak için bu dosyadaki veriler kullanılmaktadır.47,959 adet cümle bulunmaktadır.
 
 **data_set.db:** Ekli halleri bulunan kelimeleri tutar.
 
