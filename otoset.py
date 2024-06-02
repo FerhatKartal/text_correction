@@ -38,7 +38,7 @@ def otoController(param,total,indexx):
 
 
     #en benzer kelimeleri belirleyen metot
-        if((rangeoflike>=60)
+        if((rangeoflike>=50)
            and guestText.count(t.strip().lower())==0):         
                  
             if(len(guestText)<box):
@@ -59,7 +59,8 @@ def otoController(param,total,indexx):
 
                     tmp_text=guestText[i]  
                     guestText[i]=guestText[i+1]
-                    guestText[i+1]=tmp_text 
+                    guestText[i+1]=tmp_text
+   
     return guestText
 
 

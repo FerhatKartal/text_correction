@@ -1,4 +1,5 @@
 import numpy as np
+from test import yuklem_bulan
 
 def order_result(results,oneriler):     #ngram datalarını uygun cümleye çeviren metot
   
@@ -33,18 +34,7 @@ def order_result(results,oneriler):     #ngram datalarını uygun cümleye çevi
                 if(lastmatris.count(matris2)==0):
                     lastmatris.append(matris2.copy())
 
-    sceen=""
-    for i in lastmatris:
-         for k in i:
-              sceen+=k+" "
-         sceen+="\n"
-
-    if(sceen=="" and lastmatris.count(matris2)==0):
-        for i in matris2:
-         sceen+=i+" "
-        sceen+="\n"
-
-    return sceen
+    return lastmatris,matris2
     
 
     

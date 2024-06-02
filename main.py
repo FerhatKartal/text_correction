@@ -1,16 +1,22 @@
 from otoset import otoController
 from data_gram2 import data_gram2_py
 from data_set import dataset_py
+from data_postag import postag_analize
+from fetch_data_postag import postag_py,plain_text
 from correctwords import correctwords_py
 from arrays_and_indexes import arrayAndIndexes
 from data_analize import analize
 from result import results
 from order_result import order_result
 import tkinter as tk
-import sqlite3
+from _zemberek import zbrk
 
 #data_gram.db'den verileri çeker.
 n2grams=data_gram2_py()
+
+#data_postag.db'den etiketlenmiş verileri çeker
+postag_data=postag_py()
+
 
 #dataset.db'den verileri çeker
 words1=dataset_py()
@@ -46,7 +52,12 @@ def show_correct():
       _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
      datas_results=results(_total_arr,n2grams)    #dataları ngram analizine verir.
      ordered_results=order_result(datas_results,_total_arr)#datayı doğru dizilimli cümlelere çevirir.
-    
+     last_matris=ordered_results[0]
+     matris2=ordered_results[1]
+     last_matris=postag_analize(last_matris,postag_data)#sonucun istatistiğini çıkarır
+     ordered_results=plain_text(last_matris,matris2)#sonuç düz metne çevrilir
+
+     ordered_results+=str(zbrk(_entry.get()))+"\n"
      _oneri.insert('end',ordered_results)    #sonucu öneri bölümüne yazar.
 
      _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.             
