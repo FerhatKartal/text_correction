@@ -32,7 +32,9 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **data_postag.db:** verilerin etiketlenmiş halini içerir.
 
-**data_postag.py:** data_postag.db'den verileri çeker.
+**fetch_data_postag.py:** data_postag.db'den verileri çeker.
+
+**data_postag.py:** çıktıların kelime analizlerini yapar.
 
 **order_results.py:** n_gram datalarını normal cümleye çevirir.
 
