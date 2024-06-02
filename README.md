@@ -38,6 +38,8 @@ Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmekt
 
 **text_cleaning:** Metni noktalama işaretlerinden ve özel karakterlerden arındırır.Nltk kütüphanesine aittir.
 
+**_zemberek.py:** Zemberek kütüphanesi aracılığıyla kelime analizi yapılmaktadır.
+
 ***PROGRAMIN ÇALIŞTIRILMASI***
 
 Programı VsCode ile çalıştırmak için:
