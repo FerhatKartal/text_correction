@@ -70,7 +70,7 @@ Programı VsCode ile çalıştırmak için:
 
 **mesaj girin:** Kullanıcının cümle girdisi yapacağı alandır.
 
-**öneriler:** Girdi olarak eksik ya da yanlış yazılan kelimelere uygun sonuçların döndürüldüğü alandır.Her kelime için uygun n-gram sonuçlarından döndürülür.
+**öneriler:** Girdideki eksik ya da yanlış yazılan kelimeleri düzelterek uygun cümle sonuçlarının döndürüldüğü alandır.Sonuç için uygun n-gram sonuçları ve veri tabanı istatistik sonuçları döndürülür.
 
 **düzelt butonu:** öneriler bölümünün çalışmasını sağlar.
 
