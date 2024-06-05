@@ -4,7 +4,6 @@ Text Correction, Türkçe Otomatik Metin Düzeltme programıdır.Girdi olarak ve
 
 Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanlarını doğru olanıyla değiştirir ve girilen cümleyi mantıksal bağlamda düzelterek kullanıcıya döndürür.
 
-Program geliştirilmekte olduğu için bu aşamada sadece kelimeleri düzeltmektedir. Cümle bazında düzeltmeler için metot eklemeleri devam edecektir.
 
 ***PROGRAMDAKİ METOTLAR***
 
