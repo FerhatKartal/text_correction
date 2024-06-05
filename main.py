@@ -43,6 +43,7 @@ def show_correct():
      _oneri_arr=[]                  #gelen önerileri tutmak için boş bir öneri dizisi oluşturur.
      _oneri.delete(1.0,'end')       #öneri bölümünü temizler.
      _data_pure=_entry.get()             #girdi olarak verilen datayı alır.
+     _data_pure=_data_pure.lower()
      _data=_data_pure.split(" ")         #girdiyi boşluklara göre split eder.
     
      for i in _data: 
