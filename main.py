@@ -43,25 +43,29 @@ def show_correct():
      _oneri_arr=[]                  #gelen önerileri tutmak için boş bir öneri dizisi oluşturur.
      _oneri.delete(1.0,'end')       #öneri bölümünü temizler.
      _data_pure=_entry.get()             #girdi olarak verilen datayı alır.
-     _data_pure=_data_pure.lower()
-     _data=_data_pure.split(" ")         #girdiyi boşluklara göre split eder.
+     if(_data_pure==""):
+         _oneri.insert('end',"boş veri girişi")    #sonucu öneri bölümüne yazar.
+         _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.
+     else:
+      _data_pure=_data_pure.lower()
+      _data=_data_pure.split(" ")         #girdiyi boşluklara göre split eder.
     
-     for i in _data: 
-      data_index=analize(i,total)#girdi analizi için data dizisi belirler.
-      i=i.strip()   
-      _oneri_arr=otoController(i,data_index[0],data_index[1])#girdi,sözlük datasını,kelimelerin rakamsal değerleri göndererek girdiye uygun sonuçları getirir.
-      _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
-     datas_results=results(_total_arr,n2grams)    #dataları ngram analizine verir.
-     ordered_results=order_result(datas_results,_total_arr)#datayı doğru dizilimli cümlelere çevirir.
-     last_matris=ordered_results[0]
-     matris2=ordered_results[1]
-     last_matris=postag_analize(last_matris,postag_data)#sonucun istatistiğini çıkarır
-     ordered_results=plain_text(last_matris,matris2)#sonuç düz metne çevrilir
+      for i in _data: 
+       data_index=analize(i,total)#girdi analizi için data dizisi belirler.
+       i=i.strip()   
+       _oneri_arr=otoController(i,data_index[0],data_index[1])#girdi,sözlük datasını,kelimelerin rakamsal değerleri göndererek girdiye uygun sonuçları getirir.
+       _total_arr.append(_oneri_arr)    #tüm kelimelerin benzerlerini tutan dizi
+      datas_results=results(_total_arr,n2grams)    #dataları ngram analizine verir.
+      ordered_results=order_result(datas_results,_total_arr)#datayı doğru dizilimli cümlelere çevirir.
+      last_matris=ordered_results[0]
+      matris2=ordered_results[1]
+      last_matris=postag_analize(last_matris,postag_data)#sonucun istatistiğini çıkarır
+      ordered_results=plain_text(last_matris,matris2)#sonuç düz metne çevrilir
 
-     ordered_results+=str(zbrk(_entry.get()))+"\n"
-     _oneri.insert('end',ordered_results)    #sonucu öneri bölümüne yazar.
+      ordered_results+=str(zbrk(_entry.get()))+"\n"
+      _oneri.insert('end',ordered_results)    #sonucu öneri bölümüne yazar.
 
-     _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.             
+      _oneri.config(state= "disabled")   #öneri bölümünü "yazılamaz" yapar.             
         
 
 #arayüz kodları
