@@ -1,8 +1,8 @@
 ***PROGRAMIN İŞLEVİ***
 
-Text Correction, Türkçe Otomatik Metin Düzeltme programıdır.Girdi olarak verilen bir cümledeki kelimelerin birbirleriyle mantıksal bağlamları kurulmaya çalışılmaktadır.
+Text Correction, Türkçe Otomatik Metin Düzeltme programıdır.Girdi olarak verilen bir cümledeki kelimelerin birbirleriyle anlamsal bağlamları kurulmaya çalışılmaktadır.
 
-Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanlarını doğru olanıyla değiştirir ve girilen cümleyi mantıksal bağlamda düzelterek kullanıcıya döndürür.
+Program girdi olarak aldığı kelimelerden eksik ya da hatalı olanlarını doğru olanıyla değiştirir ve girilen cümleyi anlamsal bağlamda düzelterek kullanıcıya döndürür.
 
 
 ***PROGRAMDAKİ METOTLAR***
