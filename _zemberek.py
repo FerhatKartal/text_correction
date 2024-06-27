@@ -1,5 +1,3 @@
-# pip install zemberek-python
-
 from zemberek import (
     TurkishSpellChecker,
     TurkishSentenceNormalizer,
