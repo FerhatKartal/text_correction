@@ -55,13 +55,17 @@ Programı VsCode ile çalıştırmak için:
 
 3)"myenv/Scripts/activate" komutu ile dosyaya girilir.
 
-4)"pip install numpy" komutu ile numpy kütüphanesi kurulur.
+4)"pip install numpy==1.26.4" komutu ile numpy kütüphanesi kurulur.
 
-5)"pip install nltk" komutu ile nltk kütüphanesi kurulur.
+5)"pip install nltk==3.8.1" komutu ile nltk kütüphanesi kurulur.
 
-6)"pip install textdistance" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
+6)"pip install zemberek-python==0.2.3" komutu ile zemberek kütüphanesi kurulur.
 
-7)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
+7)"pip install textdistance==4.6.2" komutu ile kelime karşılaştırma algoritmalarını içeren kütüphane indirilmelidir.
+
+8)"setuptools==69.5.1" versiyonunda olmalıdır.
+
+9)her bir .py uzantılı dosya "python <dosya adı>.py" gibi komutlarla çalıştırılır.
 
 örneğin; "python wordnet.py"
 
