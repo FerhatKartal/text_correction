@@ -1,5 +1,4 @@
 import numpy as np
-from test import yuklem_bulan
 
 def order_result(results,oneriler):     #ngram datalarını uygun cümleye çeviren metot
   
